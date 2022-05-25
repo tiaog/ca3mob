@@ -13,15 +13,10 @@ export class CharactersPage implements OnInit {
 
   characters: Observable<any>;
  
-  constructor(private navController: NavController, private router: Router, private http: HttpClient) { }
-
-
-  ngOnInit() {
-    	
-    this.characters = this.http.get('https://www.breakingbadapi.com/api/characters');	
-    this.characters.subscribe(data => {
-      console.log('my data: ', data);
-    });
+  constructor(private navController: NavController, private router: Router, private http: HttpClient) {
+   }
+   ngOnInit() {
+    this.characters = this.http.get('https://www.breakingbadapi.com/api/characters');
   }
 
   openDetails(character) {
